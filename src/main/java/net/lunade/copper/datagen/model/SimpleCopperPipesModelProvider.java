@@ -99,7 +99,7 @@ public final class SimpleCopperPipesModelProvider extends FabricModelProvider {
 			pipeTextureMapping.put(TextureSlot.FRONT, TextureMapping.getBlockTexture(pipeBlock, "_front"));
 
 			PIPE_MODEL.create(pipeBlock, pipeTextureMapping, generators.modelOutput);
-			PIPE_MODEL_BACK.createWithSuffix(pipeBlock, "_back", pipeTextureMapping, generators.modelOutput);
+			PIPE_MODEL_BACK.createWithSuffix(pipeBlock, "_back_extension", pipeTextureMapping, generators.modelOutput);
 			PIPE_MODEL_BACK_SMOOTH.createWithSuffix(pipeBlock, "_back_smooth", pipeTextureMapping, generators.modelOutput);
 			PIPE_MODEL_DOUBLE_EXTENSION.createWithSuffix(pipeBlock, "_double_extension", pipeTextureMapping, generators.modelOutput);
 			PIPE_MODEL_FRONT_EXTENSION.createWithSuffix(pipeBlock, "_front_extension", pipeTextureMapping, generators.modelOutput);
