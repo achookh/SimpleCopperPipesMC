@@ -1,5 +1,5 @@
 plugins {
-	id("fabric-loom") version("1.7.+")
+	id("fabric-loom") version("1.9.+")
 	id("org.quiltmc.gradle.licenser") version("+")
 	id("org.ajoberstar.grgit") version("+")
 	id("com.modrinth.minotaur") version("+")
