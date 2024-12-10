@@ -1,12 +1,11 @@
 package net.lunade.copper.datagen.loot;
 
+import java.util.concurrent.CompletableFuture;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.lunade.copper.registry.SimpleCopperPipesBlocks;
 import net.minecraft.core.HolderLookup;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.concurrent.CompletableFuture;
 
 public final class SimpleCopperPipesBlockLootProvider extends FabricBlockLootTableProvider {
 

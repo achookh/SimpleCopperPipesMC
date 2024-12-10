@@ -9,51 +9,51 @@ import net.lunade.copper.SimpleCopperPipesConstants;
 
 public final class SimpleCopperPipesConfig {
 
-    public static final Config<SimpleCopperPipesConfig> INSTANCE = ConfigRegistry.register(
-            new JsonConfig<>(
-                    SimpleCopperPipesConstants.MOD_ID,
-                    SimpleCopperPipesConfig.class,
-                    JsonType.JSON5,
-                    null,
-                    null
-            )
-    );
+	public static final Config<SimpleCopperPipesConfig> INSTANCE = ConfigRegistry.register(
+		new JsonConfig<>(
+			SimpleCopperPipesConstants.MOD_ID,
+			SimpleCopperPipesConfig.class,
+			JsonType.JSON5,
+			null,
+			null
+		)
+	);
 
-    @EntrySyncData("openableFittings")
-    public boolean openableFittings = false;
+	@EntrySyncData("openableFittings")
+	public boolean openableFittings = false;
 
-    @EntrySyncData("dispensing")
-    public boolean dispensing = true;
+	@EntrySyncData("dispensing")
+	public boolean dispensing = true;
 
-    @EntrySyncData("dispenseSounds")
-    public boolean dispenseSounds = true;
+	@EntrySyncData("dispenseSounds")
+	public boolean dispenseSounds = true;
 
-    @EntrySyncData("suctionSounds")
-    public boolean suctionSounds = true;
+	@EntrySyncData("suctionSounds")
+	public boolean suctionSounds = true;
 
-    @EntrySyncData("senseGameEvents")
-    public boolean senseGameEvents = true;
+	@EntrySyncData("senseGameEvents")
+	public boolean senseGameEvents = true;
 
-    @EntrySyncData("carryWater")
-    public boolean carryWater = true;
+	@EntrySyncData("carryWater")
+	public boolean carryWater = true;
 
-    @EntrySyncData("carryLava")
-    public boolean carryLava = true;
+	@EntrySyncData("carryLava")
+	public boolean carryLava = true;
 
-    @EntrySyncData("carrySmoke")
-    public boolean carrySmoke = true;
+	@EntrySyncData("carrySmoke")
+	public boolean carrySmoke = true;
 
-    public static SimpleCopperPipesConfig get() {
-        return INSTANCE.config();
-    }
+	public static SimpleCopperPipesConfig get() {
+		return INSTANCE.config();
+	}
 
-    public static SimpleCopperPipesConfig get(boolean real) {
-        if (real)
-            return INSTANCE.instance();
-        return INSTANCE.config();
-    }
+	public static SimpleCopperPipesConfig get(boolean real) {
+		if (real)
+			return INSTANCE.instance();
+		return INSTANCE.config();
+	}
 
-    public static SimpleCopperPipesConfig getWithSync() {
-        return INSTANCE.configWithSync();
-    }
+	public static SimpleCopperPipesConfig getWithSync() {
+		return INSTANCE.configWithSync();
+	}
 }

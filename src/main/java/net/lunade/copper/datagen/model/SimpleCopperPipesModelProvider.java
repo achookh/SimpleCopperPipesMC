@@ -8,24 +8,24 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 
 public final class SimpleCopperPipesModelProvider extends FabricModelProvider {
 
-    public SimpleCopperPipesModelProvider(FabricDataOutput output) {
-        super(output);
-    }
+	public SimpleCopperPipesModelProvider(FabricDataOutput output) {
+		super(output);
+	}
 
-    @Override
-    public void generateBlockStateModels(BlockModelGenerators generators) {
-    }
+	@Override
+	public void generateBlockStateModels(BlockModelGenerators generators) {
+	}
 
-    @Override
-    public void generateItemModels(ItemModelGenerators generators) {
-        generators.itemModelOutput.copy(SimpleCopperPipesBlocks.COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_COPPER_PIPE.asItem());
-        generators.itemModelOutput.copy(SimpleCopperPipesBlocks.EXPOSED_COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_EXPOSED_COPPER_PIPE.asItem());
-        generators.itemModelOutput.copy(SimpleCopperPipesBlocks.WEATHERED_COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_WEATHERED_COPPER_PIPE.asItem());
-        generators.itemModelOutput.copy(SimpleCopperPipesBlocks.OXIDIZED_COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_OXIDIZED_COPPER_PIPE.asItem());
+	@Override
+	public void generateItemModels(ItemModelGenerators generators) {
+		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_COPPER_PIPE.asItem());
+		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.EXPOSED_COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_EXPOSED_COPPER_PIPE.asItem());
+		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.WEATHERED_COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_WEATHERED_COPPER_PIPE.asItem());
+		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.OXIDIZED_COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_OXIDIZED_COPPER_PIPE.asItem());
 
-        generators.itemModelOutput.copy(SimpleCopperPipesBlocks.COPPER_FITTING.asItem(), SimpleCopperPipesBlocks.WAXED_COPPER_FITTING.asItem());
-        generators.itemModelOutput.copy(SimpleCopperPipesBlocks.EXPOSED_COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_EXPOSED_COPPER_FITTING.asItem());
-        generators.itemModelOutput.copy(SimpleCopperPipesBlocks.WEATHERED_COPPER_FITTING.asItem(), SimpleCopperPipesBlocks.WAXED_WEATHERED_COPPER_FITTING.asItem());
-        generators.itemModelOutput.copy(SimpleCopperPipesBlocks.OXIDIZED_COPPER_FITTING.asItem(), SimpleCopperPipesBlocks.WAXED_OXIDIZED_COPPER_FITTING.asItem());
-    }
+		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.COPPER_FITTING.asItem(), SimpleCopperPipesBlocks.WAXED_COPPER_FITTING.asItem());
+		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.EXPOSED_COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_EXPOSED_COPPER_FITTING.asItem());
+		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.WEATHERED_COPPER_FITTING.asItem(), SimpleCopperPipesBlocks.WAXED_WEATHERED_COPPER_FITTING.asItem());
+		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.OXIDIZED_COPPER_FITTING.asItem(), SimpleCopperPipesBlocks.WAXED_OXIDIZED_COPPER_FITTING.asItem());
+	}
 }

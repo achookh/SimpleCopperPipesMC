@@ -13,16 +13,16 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(CampfireBlock.class)
 public class CampfireBlockMixin {
 
-    @WrapOperation(
-            method = "isSmokeyPos",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/world/level/block/CampfireBlock;isLitCampfire(Lnet/minecraft/world/level/block/state/BlockState;)Z"
-            )
-    )
-    private static boolean simpleCopperPipes$isSmokeyPos(BlockState blockState, Operation<Boolean> operation) {
-        return operation.call(blockState)
-                || (blockState.getBlock() instanceof CopperPipe && blockState.getValue(SimpleCopperPipesBlockStateProperties.FLUID) == PipeFluid.SMOKE);
-    }
+	@WrapOperation(
+		method = "isSmokeyPos",
+		at = @At(
+			value = "INVOKE",
+			target = "Lnet/minecraft/world/level/block/CampfireBlock;isLitCampfire(Lnet/minecraft/world/level/block/state/BlockState;)Z"
+		)
+	)
+	private static boolean simpleCopperPipes$isSmokeyPos(BlockState blockState, Operation<Boolean> operation) {
+		return operation.call(blockState)
+			|| (blockState.getBlock() instanceof CopperPipe && blockState.getValue(SimpleCopperPipesBlockStateProperties.FLUID) == PipeFluid.SMOKE);
+	}
 
 }

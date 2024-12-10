@@ -23,47 +23,47 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 @Mixin(WrenchItem.class)
 public class WrenchItemMixin {
 
-    @Inject(
-            method = "useOn",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lcom/simibubi/create/content/equipment/wrench/WrenchItem;onItemUseOnOther(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;"
-            ),
-            locals = LocalCapture.CAPTURE_FAILHARD,
-            cancellable = true,
-            remap = false
-    )
-    private void simpleCopperPipes$wrenchPickup(UseOnContext context, CallbackInfoReturnable<InteractionResult> info, Player player, BlockState state, Block block) {
-        this.simpleCopperPipes$rotateCopperPipes(context, info);
-    }
+	@Inject(
+		method = "useOn",
+		at = @At(
+			value = "INVOKE",
+			target = "Lcom/simibubi/create/content/equipment/wrench/WrenchItem;onItemUseOnOther(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;"
+		),
+		locals = LocalCapture.CAPTURE_FAILHARD,
+		cancellable = true,
+		remap = false
+	)
+	private void simpleCopperPipes$wrenchPickup(UseOnContext context, CallbackInfoReturnable<InteractionResult> info, Player player, BlockState state, Block block) {
+		this.simpleCopperPipes$rotateCopperPipes(context, info);
+	}
 
-    @Unique
-    private void simpleCopperPipes$rotateCopperPipes(@NotNull UseOnContext context, CallbackInfoReturnable<InteractionResult> info) {
-        Player player = context.getPlayer();
-        if (player == null || player.isShiftKeyDown()) {
-            return;
-        }
-        Level world = context.getLevel();
-        BlockPos blockPos = context.getClickedPos();
-        BlockState blockState = world.getBlockState(blockPos);
-        Block block = blockState.getBlock();
+	@Unique
+	private void simpleCopperPipes$rotateCopperPipes(@NotNull UseOnContext context, CallbackInfoReturnable<InteractionResult> info) {
+		Player player = context.getPlayer();
+		if (player == null || player.isShiftKeyDown()) {
+			return;
+		}
+		Level world = context.getLevel();
+		BlockPos blockPos = context.getClickedPos();
+		BlockState blockState = world.getBlockState(blockPos);
+		Block block = blockState.getBlock();
 
-        if (block instanceof CopperFitting) {
-            info.setReturnValue(InteractionResult.SUCCESS); // Don't do anything if the player isn't shifting.
-        }
-        if (block instanceof CopperPipe) {
-            IWrenchable wrenchable = new IWrenchable() {
-            };
-            BlockState rotated = wrenchable.getRotatedBlockState(blockState, context.getClickedFace());
+		if (block instanceof CopperFitting) {
+			info.setReturnValue(InteractionResult.SUCCESS); // Don't do anything if the player isn't shifting.
+		}
+		if (block instanceof CopperPipe) {
+			IWrenchable wrenchable = new IWrenchable() {
+			};
+			BlockState rotated = wrenchable.getRotatedBlockState(blockState, context.getClickedFace());
 
-            BlockState state = rotated
-                    .setValue(CopperPipe.BACK_CONNECTED, CopperPipe.canConnectBack(world, blockPos, rotated.getValue(CopperPipe.FACING)))
-                    .setValue(CopperPipe.FRONT_CONNECTED, CopperPipe.canConnectFront(world, blockPos, rotated.getValue(CopperPipe.FACING)))
-                    .setValue(CopperPipe.SMOOTH, CopperPipe.isSmooth(world, blockPos, rotated.getValue(CopperPipe.FACING)));
+			BlockState state = rotated
+				.setValue(CopperPipe.BACK_CONNECTED, CopperPipe.canConnectBack(world, blockPos, rotated.getValue(CopperPipe.FACING)))
+				.setValue(CopperPipe.FRONT_CONNECTED, CopperPipe.canConnectFront(world, blockPos, rotated.getValue(CopperPipe.FACING)))
+				.setValue(CopperPipe.SMOOTH, CopperPipe.isSmooth(world, blockPos, rotated.getValue(CopperPipe.FACING)));
 
-            world.setBlockAndUpdate(blockPos, state);
-            AllSoundEvents.WRENCH_ROTATE.playOnServer(world, blockPos, 1, context.getLevel().getRandom().nextFloat() + 0.5F);
-            info.setReturnValue(InteractionResult.SUCCESS);
-        }
-    }
+			world.setBlockAndUpdate(blockPos, state);
+			AllSoundEvents.WRENCH_ROTATE.playOnServer(world, blockPos, 1, context.getLevel().getRandom().nextFloat() + 0.5F);
+			info.setReturnValue(InteractionResult.SUCCESS);
+		}
+	}
 }

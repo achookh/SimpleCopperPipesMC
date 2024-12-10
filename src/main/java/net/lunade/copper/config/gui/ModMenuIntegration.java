@@ -7,11 +7,11 @@ import net.minecraft.client.gui.screens.Screen;
 
 public class ModMenuIntegration implements ModMenuApi {
 
-    @Override
-    public ConfigScreenFactory<Screen> getModConfigScreenFactory() {
-        if (FrozenBools.HAS_CLOTH_CONFIG) {
-            return SimpleCopperPipesConfigGui::buildScreen;
-        }
-        return null;
-    }
+	@Override
+	public ConfigScreenFactory<Screen> getModConfigScreenFactory() {
+		if (FrozenBools.HAS_CLOTH_CONFIG) {
+			return SimpleCopperPipesConfigGui::buildScreen;
+		}
+		return null;
+	}
 }

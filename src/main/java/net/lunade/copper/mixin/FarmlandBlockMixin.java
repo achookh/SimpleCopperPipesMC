@@ -11,9 +11,9 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(FarmBlock.class)
 public class FarmlandBlockMixin {
 
-    @ModifyReturnValue(at = @At("RETURN"), method = "isNearWater")
-    private static boolean simpleCopperPipes$isNearWater(boolean original, LevelReader worldView, BlockPos blockPos) {
-        return original || LeakingPipeManager.isWaterPipeNearbyBlockGetter(worldView, blockPos, 6);
-    }
+	@ModifyReturnValue(at = @At("RETURN"), method = "isNearWater")
+	private static boolean simpleCopperPipes$isNearWater(boolean original, LevelReader worldView, BlockPos blockPos) {
+		return original || LeakingPipeManager.isWaterPipeNearbyBlockGetter(worldView, blockPos, 6);
+	}
 
 }

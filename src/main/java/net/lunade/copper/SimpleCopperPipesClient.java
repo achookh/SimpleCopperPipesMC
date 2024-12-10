@@ -5,8 +5,8 @@ import net.lunade.copper.networking.SimpleCopperPipesClientNetworking;
 
 public class SimpleCopperPipesClient implements ClientModInitializer {
 
-    @Override
-    public void onInitializeClient() {
-        SimpleCopperPipesClientNetworking.registerPacketReceivers();
-    }
+	@Override
+	public void onInitializeClient() {
+		SimpleCopperPipesClientNetworking.registerPacketReceivers();
+	}
 }

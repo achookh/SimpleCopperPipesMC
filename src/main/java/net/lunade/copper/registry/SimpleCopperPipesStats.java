@@ -8,13 +8,13 @@ import net.minecraft.stats.StatFormatter;
 import net.minecraft.stats.Stats;
 
 public class SimpleCopperPipesStats {
-    public static final ResourceLocation INSPECT_PIPE = SimpleCopperPipesConstants.id("inspect_copper_pipe");
-    public static final ResourceLocation INSPECT_FITTING = SimpleCopperPipesConstants.id("inspect_copper_fitting");
+	public static final ResourceLocation INSPECT_PIPE = SimpleCopperPipesConstants.id("inspect_copper_pipe");
+	public static final ResourceLocation INSPECT_FITTING = SimpleCopperPipesConstants.id("inspect_copper_fitting");
 
-    public static void init() {
-        Registry.register(BuiltInRegistries.CUSTOM_STAT, INSPECT_PIPE, INSPECT_PIPE);
-        Registry.register(BuiltInRegistries.CUSTOM_STAT, INSPECT_FITTING, INSPECT_FITTING);
-        Stats.CUSTOM.get(INSPECT_PIPE, StatFormatter.DEFAULT);
-        Stats.CUSTOM.get(INSPECT_FITTING, StatFormatter.DEFAULT);
-    }
+	public static void init() {
+		Registry.register(BuiltInRegistries.CUSTOM_STAT, INSPECT_PIPE, INSPECT_PIPE);
+		Registry.register(BuiltInRegistries.CUSTOM_STAT, INSPECT_FITTING, INSPECT_FITTING);
+		Stats.CUSTOM.get(INSPECT_PIPE, StatFormatter.DEFAULT);
+		Stats.CUSTOM.get(INSPECT_FITTING, StatFormatter.DEFAULT);
+	}
 }

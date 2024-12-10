@@ -13,20 +13,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SugarCaneBlock.class)
 public class SugarCaneBlockMixin {
 
-    @Inject(
-            method = "canSurvive",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/core/BlockPos;below()Lnet/minecraft/core/BlockPos;",
-                    ordinal = 1,
-                    shift = At.Shift.AFTER
-            ),
-            cancellable = true
-    )
-    public void simpleCopperPipes$canSurvive(BlockState blockState, LevelReader levelReader, BlockPos blockPos, CallbackInfoReturnable<Boolean> info) {
-        if (LeakingPipeManager.isWaterPipeNearbyBlockGetter(levelReader, blockPos, 3)) {
-            info.setReturnValue(true);
-        }
-    }
+	@Inject(
+		method = "canSurvive",
+		at = @At(
+			value = "INVOKE",
+			target = "Lnet/minecraft/core/BlockPos;below()Lnet/minecraft/core/BlockPos;",
+			ordinal = 1,
+			shift = At.Shift.AFTER
+		),
+		cancellable = true
+	)
+	public void simpleCopperPipes$canSurvive(BlockState blockState, LevelReader levelReader, BlockPos blockPos, CallbackInfoReturnable<Boolean> info) {
+		if (LeakingPipeManager.isWaterPipeNearbyBlockGetter(levelReader, blockPos, 3)) {
+			info.setReturnValue(true);
+		}
+	}
 
 }

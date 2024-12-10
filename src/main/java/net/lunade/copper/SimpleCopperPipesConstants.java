@@ -5,15 +5,15 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 public class SimpleCopperPipesConstants {
-    public static final int CURRENT_FIX_VERSION = 4;
-    public static final String MOD_ID = "simple_copper_pipes";
-    public static final String LEGACY_NAMESPACE = "lunade";
-    public static final String NAMESPACE = MOD_ID;
+	public static final int CURRENT_FIX_VERSION = 4;
+	public static final String MOD_ID = "simple_copper_pipes";
+	public static final String LEGACY_NAMESPACE = "lunade";
+	public static final String NAMESPACE = MOD_ID;
 
-    @Contract("_ -> new")
-    public static @NotNull ResourceLocation id(String path) {
-        return ResourceLocation.tryBuild(NAMESPACE, path);
-    }
+	@Contract("_ -> new")
+	public static @NotNull ResourceLocation id(String path) {
+		return ResourceLocation.tryBuild(NAMESPACE, path);
+	}
 
 	@Contract("_ -> new")
 	public static @NotNull ResourceLocation legacyId(String path) {

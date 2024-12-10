@@ -12,38 +12,39 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import org.jetbrains.annotations.NotNull;
 
-public record SimpleCopperPipesNoteParticlePacket(BlockPos blockPos, int pitch, Direction direction) implements CustomPacketPayload {
-    public static final Type<SimpleCopperPipesNoteParticlePacket> PACKET_TYPE = new Type<>(
-            SimpleCopperPipesConstants.id("note_particle")
-    );
+public record SimpleCopperPipesNoteParticlePacket(BlockPos blockPos, int pitch,
+												  Direction direction) implements CustomPacketPayload {
+	public static final Type<SimpleCopperPipesNoteParticlePacket> PACKET_TYPE = new Type<>(
+		SimpleCopperPipesConstants.id("note_particle")
+	);
 
-    public static final StreamCodec<FriendlyByteBuf, SimpleCopperPipesNoteParticlePacket> CODEC = StreamCodec.ofMember(SimpleCopperPipesNoteParticlePacket::write, SimpleCopperPipesNoteParticlePacket::new);
+	public static final StreamCodec<FriendlyByteBuf, SimpleCopperPipesNoteParticlePacket> CODEC = StreamCodec.ofMember(SimpleCopperPipesNoteParticlePacket::write, SimpleCopperPipesNoteParticlePacket::new);
 
-    public SimpleCopperPipesNoteParticlePacket(@NotNull FriendlyByteBuf buf) {
-        this(buf.readBlockPos(), buf.readVarInt(), buf.readEnum(Direction.class));
-    }
+	public SimpleCopperPipesNoteParticlePacket(@NotNull FriendlyByteBuf buf) {
+		this(buf.readBlockPos(), buf.readVarInt(), buf.readEnum(Direction.class));
+	}
 
-    public static void sendToAll(ServerLevel serverLevel, BlockPos pos, int pitch, Direction direction) {
-        for (ServerPlayer player : PlayerLookup.tracking(serverLevel, pos)) {
-            ServerPlayNetworking.send(
-                    player,
-                    new SimpleCopperPipesNoteParticlePacket(
-                            pos,
-                            pitch,
-                            direction
-                    )
-            );
-        }
-    }
+	public static void sendToAll(ServerLevel serverLevel, BlockPos pos, int pitch, Direction direction) {
+		for (ServerPlayer player : PlayerLookup.tracking(serverLevel, pos)) {
+			ServerPlayNetworking.send(
+				player,
+				new SimpleCopperPipesNoteParticlePacket(
+					pos,
+					pitch,
+					direction
+				)
+			);
+		}
+	}
 
-    public void write(@NotNull FriendlyByteBuf buf) {
-        buf.writeBlockPos(this.blockPos);
-        buf.writeVarInt(this.pitch);
-        buf.writeEnum(this.direction);
-    }
+	public void write(@NotNull FriendlyByteBuf buf) {
+		buf.writeBlockPos(this.blockPos);
+		buf.writeVarInt(this.pitch);
+		buf.writeEnum(this.direction);
+	}
 
-    @NotNull
-    public Type<?> type() {
-        return PACKET_TYPE;
-    }
+	@NotNull
+	public Type<?> type() {
+		return PACKET_TYPE;
+	}
 }

@@ -14,24 +14,24 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Entity.class)
 public class EntityMixin {
 
-    @Unique
-    private boolean simpleCopperPipes$hadWaterPipeNearby;
+	@Unique
+	private boolean simpleCopperPipes$hadWaterPipeNearby;
 
-    @Inject(at = @At("HEAD"), method = "updateInWaterStateAndDoFluidPushing")
-    public void simpleCopperPipes$updateInWaterStateAndDoFluidPushing(CallbackInfoReturnable<Boolean> info) {
-        if (!this.level().isClientSide) {
-            this.simpleCopperPipes$hadWaterPipeNearby = LeakingPipeManager.isWaterPipeNearby(Entity.class.cast(this), 2);
-        }
-    }
+	@Inject(at = @At("HEAD"), method = "updateInWaterStateAndDoFluidPushing")
+	public void simpleCopperPipes$updateInWaterStateAndDoFluidPushing(CallbackInfoReturnable<Boolean> info) {
+		if (!this.level().isClientSide) {
+			this.simpleCopperPipes$hadWaterPipeNearby = LeakingPipeManager.isWaterPipeNearby(Entity.class.cast(this), 2);
+		}
+	}
 
-    @ModifyReturnValue(at = @At("RETURN"), method = "isInRain")
-    public boolean simpleCopperPipes$isInRain(boolean original) {
-        return original || this.simpleCopperPipes$hadWaterPipeNearby;
-    }
+	@ModifyReturnValue(at = @At("RETURN"), method = "isInRain")
+	public boolean simpleCopperPipes$isInRain(boolean original) {
+		return original || this.simpleCopperPipes$hadWaterPipeNearby;
+	}
 
-    @Shadow
-    public Level level() {
-        throw new AssertionError("Mixin injection failed - Simple Copper Pipes EntityMixin.");
-    }
+	@Shadow
+	public Level level() {
+		throw new AssertionError("Mixin injection failed - Simple Copper Pipes EntityMixin.");
+	}
 
 }

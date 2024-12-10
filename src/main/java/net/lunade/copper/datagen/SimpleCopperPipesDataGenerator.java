@@ -12,24 +12,24 @@ import org.jetbrains.annotations.NotNull;
 
 public final class SimpleCopperPipesDataGenerator implements DataGeneratorEntrypoint {
 
-    @Override
-    public void onInitializeDataGenerator(@NotNull FabricDataGenerator dataGenerator) {
-        final FabricDataGenerator.Pack pack = dataGenerator.createPack();
+	@Override
+	public void onInitializeDataGenerator(@NotNull FabricDataGenerator dataGenerator) {
+		final FabricDataGenerator.Pack pack = dataGenerator.createPack();
 
-        // ASSETS
+		// ASSETS
 
-        pack.addProvider(SimpleCopperPipesModelProvider::new);
+		pack.addProvider(SimpleCopperPipesModelProvider::new);
 
-        // DATA
+		// DATA
 
-        pack.addProvider(SimpleCopperPipesBlockLootProvider::new);
-        pack.addProvider(SimpleCopperPipesBlockTagProvider::new);
-        pack.addProvider(SimpleCopperPipesItemTagProvider::new);
-        pack.addProvider(SimpleCopperPipesRecipeProvider::new);
-    }
+		pack.addProvider(SimpleCopperPipesBlockLootProvider::new);
+		pack.addProvider(SimpleCopperPipesBlockTagProvider::new);
+		pack.addProvider(SimpleCopperPipesItemTagProvider::new);
+		pack.addProvider(SimpleCopperPipesRecipeProvider::new);
+	}
 
-    @Override
-    public void buildRegistry(@NotNull RegistrySetBuilder registryBuilder) {
-    }
+	@Override
+	public void buildRegistry(@NotNull RegistrySetBuilder registryBuilder) {
+	}
 
 }
