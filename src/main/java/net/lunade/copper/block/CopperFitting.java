@@ -64,7 +64,6 @@ public class CopperFitting extends BaseEntityBlock implements SimpleWaterloggedB
 	public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 	public static final EnumProperty<PipeFluid> FLUID = SimpleCopperPipesBlockStateProperties.FLUID;
 	public static final BooleanProperty HAS_ELECTRICITY = SimpleCopperPipesBlockStateProperties.HAS_ELECTRICITY;
-	public static final BooleanProperty HAS_ITEM = SimpleCopperPipesBlockStateProperties.HAS_ITEM;
 	private static final VoxelShape FITTING_SHAPE = Block.box(2.5D, 2.5D, 2.5D, 13.5D, 13.5D, 13.5D);
 	public final int cooldown;
 	private final WeatherState weatherState;
@@ -73,7 +72,12 @@ public class CopperFitting extends BaseEntityBlock implements SimpleWaterloggedB
 		super(settings);
 		this.weatherState = weatherState;
 		this.cooldown = cooldown;
-		this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, false).setValue(WATERLOGGED, false).setValue(FLUID, PipeFluid.NONE).setValue(HAS_ELECTRICITY, false).setValue(HAS_ITEM, false));
+		this.registerDefaultState(this.stateDefinition.any()
+			.setValue(POWERED, false)
+			.setValue(WATERLOGGED, false)
+			.setValue(FLUID, PipeFluid.NONE)
+			.setValue(HAS_ELECTRICITY, false)
+		);
 	}
 
 	public CopperFitting(Properties settings, int cooldown) {
@@ -224,7 +228,7 @@ public class CopperFitting extends BaseEntityBlock implements SimpleWaterloggedB
 
 	@Override
 	protected void createBlockStateDefinition(@NotNull StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(WATERLOGGED, POWERED, FLUID, HAS_ELECTRICITY, HAS_ITEM);
+		builder.add(WATERLOGGED, POWERED, FLUID, HAS_ELECTRICITY);
 	}
 
 	@Override

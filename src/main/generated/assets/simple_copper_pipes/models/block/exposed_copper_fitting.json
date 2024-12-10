@@ -1,0 +1,6 @@
+{
+  "parent": "simple_copper_pipes:block/template_fitting",
+  "textures": {
+    "texture": "simple_copper_pipes:block/exposed_copper_fitting"
+  }
+}

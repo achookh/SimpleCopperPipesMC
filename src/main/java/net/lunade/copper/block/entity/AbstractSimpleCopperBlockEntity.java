@@ -116,9 +116,6 @@ public class AbstractSimpleCopperBlockEntity extends RandomizableContainerBlockE
 			this.tickMoveableNbt((ServerLevel) level, blockPos, blockState);
 			this.dispenseMoveableNbt((ServerLevel) level, blockPos, blockState);
 			this.moveMoveableNbt((ServerLevel) level, blockPos, blockState);
-			if (this.isEmpty() == state.getValue(SimpleCopperPipesBlockStateProperties.HAS_ITEM)) {
-				state = state.setValue(SimpleCopperPipesBlockStateProperties.HAS_ITEM, !isEmpty());
-			}
 			if (this.electricityCooldown >= 0) {
 				--this.electricityCooldown;
 			}

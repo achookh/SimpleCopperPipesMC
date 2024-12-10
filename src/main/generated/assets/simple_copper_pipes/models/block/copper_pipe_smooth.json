@@ -1,0 +1,7 @@
+{
+  "parent": "simple_copper_pipes:block/template_pipe_smooth",
+  "textures": {
+    "front": "simple_copper_pipes:block/copper_pipe_front",
+    "side": "simple_copper_pipes:block/copper_pipe"
+  }
+}

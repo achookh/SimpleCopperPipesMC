@@ -5,17 +5,6 @@
   },
 	"elements": [
 		{
-			"name": "pipe",
-			"from": [4, 4, 2],
-			"to": [12, 12, 11],
-			"faces": {
-				"east": {"uv": [16, 5, 8, 14], "rotation": 90, "texture": "#side"},
-				"west": {"uv": [8, 14, 16, 5], "rotation": 90, "texture": "#side"},
-				"up": {"uv": [16, 5, 8, 14], "texture": "#side"},
-				"down": {"uv": [8, 14, 16, 5], "texture": "#side"}
-			}
-		},
-		{
 			"name": "bracket",
 			"from": [4, 4, 11],
 			"to": [12, 12, 16],
@@ -29,8 +18,8 @@
 		},
 		{
 			"name": "opening",
-			"from": [3, 3, 0],
-			"to": [13, 13, 2],
+			"from": [3, 3, -4],
+			"to": [13, 13, -2],
 			"faces": {
 				"north": {"uv": [2, 0, 12, 10], "texture": "#front", "cullface": "north"},
 				"east": {"uv": [0, 0, 2, 10], "texture": "#front"},
@@ -38,6 +27,17 @@
 				"west": {"uv": [2, 0, 0, 10], "texture": "#front"},
 				"up": {"uv": [2, 0, 0, 10], "rotation": 90, "texture": "#front"},
 				"down": {"uv": [0, 0, 2, 10], "rotation": 90, "texture": "#front"}
+			}
+		},
+		{
+			"name": "pipe",
+			"from": [4, 4, -2],
+			"to": [12, 12, 11],
+			"faces": {
+				"east": {"uv": [16, 1, 8, 14], "rotation": 90, "texture": "#side"},
+				"west": {"uv": [8, 14, 16, 1], "rotation": 90, "texture": "#side"},
+				"up": {"uv": [16, 1, 8, 14], "texture": "#side"},
+				"down": {"uv": [8, 14, 16, 1], "texture": "#side"}
 			}
 		}
 	]

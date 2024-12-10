@@ -1,5 +1,8 @@
 {
 	"parent": "block/block",
+  "textures": {
+    "particle": "#side"
+  },
 	"elements": [
 		{
 			"name": "bracket",

@@ -74,7 +74,6 @@ public class CopperPipe extends BaseEntityBlock implements SimpleWaterloggedBloc
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final EnumProperty<PipeFluid> FLUID = SimpleCopperPipesBlockStateProperties.FLUID;
 	public static final BooleanProperty HAS_ELECTRICITY = SimpleCopperPipesBlockStateProperties.HAS_ELECTRICITY;
-	public static final BooleanProperty HAS_ITEM = SimpleCopperPipesBlockStateProperties.HAS_ITEM;
 	private static final VoxelShape UP_SHAPE = Shapes.or(Block.box(4D, 0D, 4D, 12D, 14D, 12D), Block.box(3D, 14D, 3D, 13D, 16D, 13D));
 	private static final VoxelShape DOWN_SHAPE = Shapes.or(Block.box(4D, 2D, 4D, 12D, 16D, 12D), Block.box(3D, 0D, 3D, 13D, 2D, 13D));
 	private static final VoxelShape NORTH_SHAPE = Shapes.or(Block.box(4D, 4D, 2D, 12D, 12D, 16D), Block.box(3D, 3D, 0.D, 13D, 13D, 2D));
@@ -120,7 +119,14 @@ public class CopperPipe extends BaseEntityBlock implements SimpleWaterloggedBloc
 		this.weatherState = weatherState;
 		this.cooldown = cooldown;
 		this.dispenseShotLength = dispenseShotLength;
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.DOWN).setValue(SMOOTH, false).setValue(WATERLOGGED, false).setValue(FLUID, PipeFluid.NONE).setValue(HAS_ELECTRICITY, false).setValue(HAS_ITEM, false).setValue(POWERED, false));
+		this.registerDefaultState(this.stateDefinition.any()
+			.setValue(FACING, Direction.DOWN)
+			.setValue(SMOOTH, false)
+			.setValue(WATERLOGGED, false)
+			.setValue(FLUID, PipeFluid.NONE)
+			.setValue(HAS_ELECTRICITY, false)
+			.setValue(POWERED, false)
+		);
 	}
 
 	public CopperPipe(Properties settings, int cooldown, int dispenseShotLength) {
@@ -204,25 +210,6 @@ public class CopperPipe extends BaseEntityBlock implements SimpleWaterloggedBloc
 			((double) pos.getY() + 0.5D) + 0.7D * (double) facing.getStepY(),
 			((double) pos.getZ() + 0.5D) + 0.7D * (double) facing.getStepZ()
 		);
-	}
-
-	public static boolean shouldGlow(@NotNull BlockState state) {
-		if (state.getBlock() instanceof CopperPipe || state.getBlock() instanceof CopperFitting) {
-			return state.getValue(HAS_ITEM) || state.getValue(HAS_ELECTRICITY);
-		}
-		return false;
-	}
-
-	public static int getLuminance(@NotNull BlockState state) {
-		if (state.getBlock() instanceof CopperPipe || state.getBlock() instanceof CopperFitting) {
-			if (state.getValue(HAS_ELECTRICITY)) {
-				return 5;
-			}
-			if (state.getValue(HAS_ITEM)) {
-				return 3;
-			}
-		}
-		return 1;
 	}
 
 	public static boolean isReceivingRedstonePower(BlockPos blockPos, Level level) {
@@ -455,7 +442,7 @@ public class CopperPipe extends BaseEntityBlock implements SimpleWaterloggedBloc
 
 	@Override
 	protected void createBlockStateDefinition(@NotNull StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, FRONT_CONNECTED, BACK_CONNECTED, SMOOTH, WATERLOGGED, FLUID, HAS_ELECTRICITY, HAS_ITEM, POWERED);
+		builder.add(FACING, FRONT_CONNECTED, BACK_CONNECTED, SMOOTH, WATERLOGGED, FLUID, HAS_ELECTRICITY, POWERED);
 	}
 
 	@Override

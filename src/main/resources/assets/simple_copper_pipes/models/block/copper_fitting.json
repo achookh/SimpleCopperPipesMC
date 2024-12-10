@@ -1,7 +1,0 @@
-{
-	"parent": "simple_copper_pipes:block/template_fitting",
-	"textures": {
-		"particle": "simple_copper_pipes:block/copper_fitting",
-		"texture": "simple_copper_pipes:block/copper_fitting"
-	}
-}

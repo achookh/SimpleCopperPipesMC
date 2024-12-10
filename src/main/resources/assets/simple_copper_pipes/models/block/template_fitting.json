@@ -1,5 +1,8 @@
 {
 	"parent": "block/block",
+  "textures": {
+    "particle": "#texture"
+  },
 	"elements": [
 		{
 			"name": "fitting",

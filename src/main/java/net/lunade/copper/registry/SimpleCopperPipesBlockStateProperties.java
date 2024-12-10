@@ -10,7 +10,6 @@ public class SimpleCopperPipesBlockStateProperties {
 	public static final BooleanProperty SMOOTH = BooleanProperty.create("smooth");
 	public static final EnumProperty<PipeFluid> FLUID = EnumProperty.create("fluid", PipeFluid.class);
 	public static final BooleanProperty HAS_ELECTRICITY = BooleanProperty.create("has_electricity");
-	public static final BooleanProperty HAS_ITEM = BooleanProperty.create("has_item");
 
 	public static void init() {
 
