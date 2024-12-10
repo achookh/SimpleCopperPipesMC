@@ -3,6 +3,7 @@ package net.lunade.copper.datagen;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.lunade.copper.datagen.loot.SimpleCopperPipesBlockLootProvider;
+import net.lunade.copper.datagen.model.SimpleCopperPipesModelProvider;
 import net.lunade.copper.datagen.recipe.SimpleCopperPipesRecipeProvider;
 import net.lunade.copper.datagen.tag.SimpleCopperPipesBlockTagProvider;
 import net.lunade.copper.datagen.tag.SimpleCopperPipesItemTagProvider;
@@ -14,6 +15,10 @@ public final class SimpleCopperPipesDataGenerator implements DataGeneratorEntryp
     @Override
     public void onInitializeDataGenerator(@NotNull FabricDataGenerator dataGenerator) {
         final FabricDataGenerator.Pack pack = dataGenerator.createPack();
+
+        // ASSETS
+
+        pack.addProvider(SimpleCopperPipesModelProvider::new);
 
         // DATA
 
