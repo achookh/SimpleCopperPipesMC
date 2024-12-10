@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.lunade.copper.registry.SimpleCopperPipesBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import org.jetbrains.annotations.NotNull;
 
 public final class SimpleCopperPipesModelProvider extends FabricModelProvider {
 
@@ -17,7 +18,7 @@ public final class SimpleCopperPipesModelProvider extends FabricModelProvider {
 	}
 
 	@Override
-	public void generateItemModels(ItemModelGenerators generators) {
+	public void generateItemModels(@NotNull ItemModelGenerators generators) {
 		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_COPPER_PIPE.asItem());
 		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.EXPOSED_COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_EXPOSED_COPPER_PIPE.asItem());
 		generators.itemModelOutput.copy(SimpleCopperPipesBlocks.WEATHERED_COPPER_PIPE.asItem(), SimpleCopperPipesBlocks.WAXED_WEATHERED_COPPER_PIPE.asItem());
