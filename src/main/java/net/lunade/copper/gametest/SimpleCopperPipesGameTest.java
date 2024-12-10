@@ -51,21 +51,21 @@ public class SimpleCopperPipesGameTest implements FabricGameTest {
         ItemStack stack = new ItemStack(Items.DIAMOND_AXE);
 
         // variable names reflect the end result after axe interaction
-        TrackedPosition<Vec3> copperPipe = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.EXPOSED_COPPER_PIPE, new Vec3(9.5, 2.5, 0.5));
-        TrackedPosition<Vec3> exposedPipe = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WEATHERED_COPPER_PIPE, new Vec3(9.5, 2.5, 1.5));
-        TrackedPosition<Vec3> weatheredPipe = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.OXIDIZED_COPPER_PIPE, new Vec3(9.5, 2.5, 2.5));
-        TrackedPosition<Vec3> copperPipe2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_COPPER_PIPE, new Vec3(8.5, 2.5, 0.5));
-        TrackedPosition<Vec3> exposedPipe2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_EXPOSED_COPPER_PIPE, new Vec3(8.5, 2.5, 1.5));
-        TrackedPosition<Vec3> weatheredPipe2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_WEATHERED_COPPER_PIPE, new Vec3(8.5, 2.5, 2.5));
-        TrackedPosition<Vec3> oxidizedPipe = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_OXIDIZED_COPPER_PIPE, new Vec3(8.5, 2.5, 3.5));
+        TrackedPosition<Vec3> copperPipe = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.EXPOSED_COPPER_PIPE, new Vec3(9.5, 1.5, 0.5));
+        TrackedPosition<Vec3> exposedPipe = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WEATHERED_COPPER_PIPE, new Vec3(9.5, 1.5, 1.5));
+        TrackedPosition<Vec3> weatheredPipe = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.OXIDIZED_COPPER_PIPE, new Vec3(9.5, 1.5, 2.5));
+        TrackedPosition<Vec3> copperPipe2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_COPPER_PIPE, new Vec3(8.5, 1.5, 0.5));
+        TrackedPosition<Vec3> exposedPipe2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_EXPOSED_COPPER_PIPE, new Vec3(8.5, 1.5, 1.5));
+        TrackedPosition<Vec3> weatheredPipe2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_WEATHERED_COPPER_PIPE, new Vec3(8.5, 1.5, 2.5));
+        TrackedPosition<Vec3> oxidizedPipe = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_OXIDIZED_COPPER_PIPE, new Vec3(8.5, 1.5, 3.5));
 
-        TrackedPosition<Vec3> copperFitting = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.EXPOSED_COPPER_FITTING, new Vec3(9.5, 2.5, 7.5));
-        TrackedPosition<Vec3> exposedFitting = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WEATHERED_COPPER_FITTING, new Vec3(9.5, 2.5, 8.5));
-        TrackedPosition<Vec3> weatheredFitting = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.OXIDIZED_COPPER_FITTING, new Vec3(9.5, 2.5, 9.5));
-        TrackedPosition<Vec3> copperFitting2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_COPPER_FITTING, new Vec3(8.5, 2.5, 6.5));
-        TrackedPosition<Vec3> exposedFitting2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_EXPOSED_COPPER_FITTING, new Vec3(8.5, 2.5, 7.5));
-        TrackedPosition<Vec3> weatheredFitting2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_WEATHERED_COPPER_FITTING, new Vec3(8.5, 2.5, 8.5));
-        TrackedPosition<Vec3> oxidizedFitting = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_OXIDIZED_COPPER_FITTING, new Vec3(8.5, 2.5, 9.5));
+        TrackedPosition<Vec3> copperFitting = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.EXPOSED_COPPER_FITTING, new Vec3(9.5, 1.5, 7.5));
+        TrackedPosition<Vec3> exposedFitting = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WEATHERED_COPPER_FITTING, new Vec3(9.5, 1.5, 8.5));
+        TrackedPosition<Vec3> weatheredFitting = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.OXIDIZED_COPPER_FITTING, new Vec3(9.5, 1.5, 9.5));
+        TrackedPosition<Vec3> copperFitting2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_COPPER_FITTING, new Vec3(8.5, 1.5, 6.5));
+        TrackedPosition<Vec3> exposedFitting2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_EXPOSED_COPPER_FITTING, new Vec3(8.5, 1.5, 7.5));
+        TrackedPosition<Vec3> weatheredFitting2 = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_WEATHERED_COPPER_FITTING, new Vec3(8.5, 1.5, 8.5));
+        TrackedPosition<Vec3> oxidizedFitting = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_OXIDIZED_COPPER_FITTING, new Vec3(8.5, 1.5, 9.5));
         List<TrackedPosition<Vec3>> copperLocations = List.of(
                 copperPipe, exposedPipe, weatheredPipe, copperPipe2, exposedPipe2, weatheredPipe2, oxidizedPipe,
                 copperFitting, exposedFitting, weatheredFitting, copperFitting2, exposedFitting2, weatheredFitting2, oxidizedFitting
@@ -111,8 +111,8 @@ public class SimpleCopperPipesGameTest implements FabricGameTest {
     public void composterTransfer(GameTestHelper helper) {
         ItemVariant inputResource = ItemVariant.of(Items.CORNFLOWER);
         ItemVariant outputResource = ItemVariant.of(Items.BONE_MEAL);
-        TrackedPosition<BlockPos> source = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_COPPER_PIPE, new BlockPos(9, 4, 4));
-        TrackedPosition<BlockPos> output = TrackedPosition.createRelative(helper, Blocks.CHEST, new BlockPos(7, 2, 4));
+        TrackedPosition<BlockPos> source = TrackedPosition.createRelative(helper, SimpleCopperPipesBlocks.WAXED_COPPER_PIPE, new BlockPos(9, 3, 4));
+        TrackedPosition<BlockPos> output = TrackedPosition.createRelative(helper, Blocks.CHEST, new BlockPos(7, 1, 4));
 
         moveResources(helper, source, inputResource, 32, MoveDirection.IN, false);
         helper.runAfterDelay(75L, () -> {
@@ -125,8 +125,8 @@ public class SimpleCopperPipesGameTest implements FabricGameTest {
     @GameTest(template = DIRECT_PIPE_TRANSFER)
     public void directPipeTransfer(GameTestHelper helper) {
         ItemVariant resource = ItemVariant.of(Blocks.MANGROVE_LOG);
-        TrackedPosition<BlockPos> sourceChest = TrackedPosition.createRelative(helper, Blocks.CHEST, new BlockPos(9, 2, 4));
-        TrackedPosition<BlockPos> targetChest = TrackedPosition.createRelative(helper, Blocks.CHEST, new BlockPos(0, 2, 4));
+        TrackedPosition<BlockPos> sourceChest = TrackedPosition.createRelative(helper, Blocks.CHEST, new BlockPos(9, 1, 4));
+        TrackedPosition<BlockPos> targetChest = TrackedPosition.createRelative(helper, Blocks.CHEST, new BlockPos(0, 1, 4));
 
         moveResources(helper, sourceChest, resource, 32, MoveDirection.IN, false);
         helper.onEachTick(() -> {
@@ -139,11 +139,11 @@ public class SimpleCopperPipesGameTest implements FabricGameTest {
     public void storageUnification(GameTestHelper helper) {
         ItemVariant resource = ItemVariant.of(Blocks.MANGROVE_LOG);
         for (int z = 0; z < 10; z += 2) {
-            TrackedPosition<BlockPos> chestPos = TrackedPosition.createRelative(helper, Blocks.CHEST, new BlockPos(9, 2, z));
+            TrackedPosition<BlockPos> chestPos = TrackedPosition.createRelative(helper, Blocks.CHEST, new BlockPos(9, 1, z));
             moveResources(helper, chestPos, resource, 128, MoveDirection.IN, false);
         }
         // unified chest
-        TrackedPosition<BlockPos> chestPos = TrackedPosition.createRelative(helper, Blocks.CHEST, new BlockPos(9, 4, 4));
+        TrackedPosition<BlockPos> chestPos = TrackedPosition.createRelative(helper, Blocks.CHEST, new BlockPos(9, 3, 4));
         helper.onEachTick(() -> {
             long amountInChest = moveResources(helper, chestPos, resource, 640, MoveDirection.OUT, true);
             if (amountInChest == 640) helper.succeed();
